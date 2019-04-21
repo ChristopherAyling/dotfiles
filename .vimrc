@@ -40,6 +40,7 @@ set autoindent
 set copyindent
 set shiftround
 filetype indent on
+set listchars=extends:#
 
 set showcmd
 set cursorline
