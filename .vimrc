@@ -1,5 +1,10 @@
+" https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally
+" https://nvie.com/posts/how-i-boosted-my-vim/
+
+execute pathogen#infect()
 set nocompatible
 
+set title
 set shell=bash
 set updatetime=1000
 set ttyfast
@@ -57,3 +62,34 @@ nnoremap k gk
 set smartcase
 set hlsearch
 set incsearch
+
+""" vim tabs and status and splits
+set showtabline=2
+nnoremap <C-j> :tabprevious<CR>
+nnoremap <C-k> :tabnext<CR>
+
+set splitright
+set splitbelow
+
+""" -------------------- NERDTree CONFIG -------------------------
+" nerd tree opens files in different tabs
+" let g:NERDTreeMapOpenInTab='<ENTER>'
+
+" start NERDTree automatically on startup
+" autocmd vimenter * NERDTree
+
+let g:NERDTreeWinSize=50
+
+" if NERDTreeTab is open --> NERDTreeToggle, else NERDTreeFind
+function! OpenNERDTree()
+    if exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+        NERDTreeToggle
+    else
+        " finds currently open file in NERDTree
+        NERDTreeFind
+    endif
+endfunction
+
+" map toggling nerd tree
+nnoremap <C-p> :call OpenNERDTree()<CR>
+
