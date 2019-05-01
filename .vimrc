@@ -2,6 +2,7 @@
 " https://nvie.com/posts/how-i-boosted-my-vim/
 
 execute pathogen#infect()
+filetype plugin on
 set nocompatible
 
 set title
@@ -67,7 +68,7 @@ set incsearch
 set showtabline=2
 nnoremap <C-j> :tabprevious<CR>
 nnoremap <C-k> :tabnext<CR>
-
+map W <C-W>w
 set splitright
 set splitbelow
 

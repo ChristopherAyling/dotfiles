@@ -8,3 +8,5 @@
 	        co = checkout
 		  df = diff
 		    lg = log -p
+[core]
+	editor = vim
