@@ -13,6 +13,8 @@ set timeout timeoutlen=1000 ttimeoutlen=50
 set autoread
 set hidden
 
+colorscheme monokai_pro
+
 " turn off arrow keys
 map <up> <nop>
 map <down> <nop>
@@ -80,6 +82,7 @@ set splitbelow
 " autocmd vimenter * NERDTree
 
 let g:NERDTreeWinSize=50
+let NERDTreeShowHidden=1
 
 " if NERDTreeTab is open --> NERDTreeToggle, else NERDTreeFind
 function! OpenNERDTree()
@@ -93,4 +96,27 @@ endfunction
 
 " map toggling nerd tree
 nnoremap <C-p> :call OpenNERDTree()<CR>
+
+" Status Line Settings
+function! GitBranch()
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+    let l:branchname = GitBranch()
+    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+
+set laststatus=2
+
+let g:airline_powerline_fonts = 1
+
+augroup myvimrchooks
+    au!
+    autocmd bufwritepost .vimrc source ~/.vimrc
+augroup END
+
+let g:airline#extensions#hunks#enabled=1
+let g:airline#extensions#branch#enabled=1
 
