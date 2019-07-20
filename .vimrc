@@ -5,6 +5,8 @@ execute pathogen#infect()
 filetype plugin on
 set nocompatible
 
+set belloff=all
+
 set title
 set shell=bash
 set updatetime=1000
@@ -12,6 +14,9 @@ set ttyfast
 set timeout timeoutlen=1000 ttimeoutlen=50
 set autoread
 set hidden
+set novb
+
+set termguicolors
 
 colorscheme monokai_pro
 
@@ -27,7 +32,6 @@ set history=1000
 set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title
-set visualbell
 set noerrorbells
 set scrolloff=4
 set pastetoggle=<F2>
@@ -120,3 +124,4 @@ augroup END
 let g:airline#extensions#hunks#enabled=1
 let g:airline#extensions#branch#enabled=1
 
+set wrap
