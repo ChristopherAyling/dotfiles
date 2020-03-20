@@ -1,12 +1,12 @@
 [user]
-	email = chris.ayling@blackbook.ai
-	name = Christopher
+	email = chris.ayling.360@gmail.com
+	name = chrisa
 [alias]
-	  st = status
-	    ci = commit
-	      br = branch
-	        co = checkout
-		  df = diff
-		    lg = log -p
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
 [core]
 	editor = vim
